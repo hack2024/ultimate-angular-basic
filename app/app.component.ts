@@ -3,7 +3,10 @@ import { Component } from '@angular/core'
 interface Passenger{
   id: number,
   fullname: string,
-  checkedIn: boolean
+  checkedIn: boolean,
+  // el operador ? indica que el campo es opcional
+  // puede venir o no desde una request
+  checkInDate?: number
 }
 @Component({
   selector: 'app-root',
@@ -15,33 +18,16 @@ interface Passenger{
         <li *ngFor="let passenger of passengers; let i= index">
           <span
             class="status"
-            [ngClass]="{
-              'checked-in': passenger.checkedIn,
-              'checked-out': !passenger.checkedIn
-            }">
+            [class.checked-in]="passenger.checkedIn">
           </span>
           {{ i }}: {{ passenger.fullname }}
-        </li>
-      </ul>
-      <h3> Airline Passengers</h3>
-      <ul>
-        <li *ngFor="let passenger of passengers; let i= index">
-          <span
-            class="status"
-            [style.backgroundColor]="(passenger.checkedIn ? 'green' : 'red')">
-          </span>
-          {{ i }}: {{ passenger.fullname }}
-        </li>
-      </ul>
-      <h3> Airline Passengers</h3>
-      <ul>
-        <li *ngFor="let passenger of passengers; let i= index">
-          <span
-            class="status"
-            [ngStyle]="{
-              'backgroundColor': (passenger.checkedIn ? 'green' : 'red')}">
-          </span>
-          {{ i }}: {{ passenger.fullname }}
+          <p>
+            {{ passenger | json }}
+          </p>
+          <div class="date">
+            Check in date:
+            {{ passenger.checkInDate ? (passenger.checkInDate | date: "yMMMMd" | uppercase ) : "Not checked in..."}}
+          </div>
         </li>
       </ul>
     </div>
@@ -53,27 +39,31 @@ export class AppComponent {
     {
       id: 1,
       fullname: "Fernando",
+      checkedIn: false,
+      checkInDate: 1235465321654
+    },
+    {
+      id: 1,
+      fullname: "Fernando",
+      checkedIn: true,
+      checkInDate: 1235465321654
+    },
+    {
+      id: 1,
+      fullname: "Fernando",
+      checkedIn: true,
+      checkInDate: 1235465321654
+    },
+    {
+      id: 1,
+      fullname: "Fernando",
+      checkedIn: true,
+      checkInDate: 1235465321654
+    },
+    {
+      id: 1,
+      fullname: "Fernando",
       checkedIn: false
-    },
-    {
-      id: 1,
-      fullname: "Fernando",
-      checkedIn: true
-    },
-    {
-      id: 1,
-      fullname: "Fernando",
-      checkedIn: true
-    },
-    {
-      id: 1,
-      fullname: "Fernando",
-      checkedIn: true
-    },
-    {
-      id: 1,
-      fullname: "Fernando",
-      checkedIn: true
     },
   ];
 
