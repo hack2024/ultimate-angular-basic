@@ -1,0 +1,29 @@
+Property Binding "[]":
+=================
+El Property Binding usa las propiedades de los tag html. Deben estar encerrados entre corchetes "[]"
+por ejemplo:
+  <img [src]="propiedad_de_clase">
+
+Event Binding "()":
+==============
+El Event Binding usa los metodos conocidos de un elemento html. Estos se encierran entre parentecis "()"
+por ejemplo:
+    <div class="app">
+      <input
+        type="text"
+        [value]="name"
+        (blur)="handleBlur($event)">
+    </div>
+
+Double Data Binding "[()]":
+====================
+Se combina las 2 sintaxis anteriores, "[()]", primero un property binding y luego un event binding.
+Mas usado con [(ngModel)]
+
+Template Reference "#":
+===================
+Muy util para pasar una referencia de un elemento, como parametro de una funcion. Por ejemplo:
+<button (click)="handleClick(username.value)">
+        Get value
+      </button>
+<input type="text" #username>
