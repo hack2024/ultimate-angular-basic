@@ -34,3 +34,9 @@ Container components and Presentation components
 -Dumb/Presentational component solo aceptan inputs y emiten cambios via output events
 
 Data flow hacia abajo y Events emit hacia arriba
+
+ngOnInit lifecycle hook
+=======================
+Un hook basicamente es una funcion que llama angular cuando algo pasa
+ngOnInit se activa cuando el componente esta ready. en esta funcion por ejemplo, se deberia hacer
+un fecth de cosas.
