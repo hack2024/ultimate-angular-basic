@@ -30,7 +30,7 @@ Muy util para pasar una referencia de un elemento, como parametro de una funcion
 
 Container components and Presentation components
 ================================================
--Smart/Container component son los que se comunican con servicios y ademas renderizan componentes hijos
+-Smart/Container component son los que se comunican con servicios y ademas renderizan componentes hijos(stateless childrens)
 -Dumb/Presentational component solo aceptan inputs y emiten cambios via output events
 
 Data flow hacia abajo y Events emit hacia arriba
