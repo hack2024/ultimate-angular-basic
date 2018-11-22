@@ -6,13 +6,15 @@ import { Passenger } from "../../models/passenger.interface";
   styleUrls: ["passenger-dashboard.component.scss"],
   template: `
     <div>
-    
+
       <passenger-count
         [items]=passengers>
       </passenger-count>
       <passenger-detail
         *ngFor="let passenger of passengers"
-        [detail]="passenger">
+        [detail]="passenger"
+        (edit)="handleEdit($event)"
+        (remove)="handleRemove($event)">
       </passenger-detail>
 
     </div>
@@ -79,4 +81,10 @@ export class PassengerDashboardComponent implements OnInit {
 
   }
 
+  handleRemove(event){
+    console.log('remove event on parent compontent: ', event);
+  }
+  handleEdit(event){
+    console.log('edit event on parent compontent: ', event);
+  }
 }
