@@ -49,3 +49,5 @@ como input, la esta leyendo el padre y se esta actualizando, lo cual no deberia 
 este hook para que solo haya one way data flow.
 
 - "One way data flow with local state changes"
+
+- Los datos van hacia abajo y los eventos hacia arriba
