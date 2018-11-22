@@ -29,51 +29,51 @@ export class PassengerDashboardComponent implements OnInit {
     this.passengers = [
       {
         id: 1,
-        fullname: "Fernando",
+        fullname: "Leila",
         checkedIn: false,
         checkInDate: null,
         children: null
       },
       {
-        id: 1,
-        fullname: "Fernando",
+        id: 2,
+        fullname: "Mauricio",
         checkedIn: true,
         checkInDate: 1235465321654,
         children: [
           {
-            name: "Fernando",
-            age: 21
+            name: "Thiago",
+            age: 10
           }
         ]
       },
       {
-        id: 1,
+        id: 3,
         fullname: "Fernando",
         checkedIn: true,
         checkInDate: 1235465321654,
         children: null
       },
       {
-        id: 1,
-        fullname: "Fernando",
+        id: 4,
+        fullname: "Liliana",
         checkedIn: true,
         checkInDate: 1235465321654,
         children: [
           {
             name: "Fernando",
-            age: 21
+            age: 31
           }
         ]
       },
       {
-        id: 1,
-        fullname: "Fernando",
+        id: 5,
+        fullname: "virgina",
         checkedIn: false,
         checkInDate: null,
         children: [
           {
-            name: "Fernando",
-            age: 21
+            name: "Maximo",
+            age: 6
           }
         ]
       }
@@ -81,10 +81,18 @@ export class PassengerDashboardComponent implements OnInit {
 
   }
 
-  handleRemove(event){
-    console.log('remove event on parent compontent: ', event);
+  handleRemove(event: Passenger){
+    this.passengers = this.passengers.filter((passenger: Passenger) => {
+      return passenger.id != event.id
+    });
   }
-  handleEdit(event){
-    console.log('edit event on parent compontent: ', event);
+  handleEdit(event: Passenger){
+    this.passengers = this.passengers.map((passenger: Passenger) => {
+      if (passenger.id === event.id) {
+        passenger = Object.assign({}, passenger, event);
+      }
+      return passenger
+    });
+    console.log(this.passengers)
   }
 }

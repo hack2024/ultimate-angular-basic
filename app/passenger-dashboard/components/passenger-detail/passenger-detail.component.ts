@@ -6,7 +6,6 @@ import { Passenger } from '../../models/passenger.interface'
   styleUrls: ['passenger-detail.component.scss'],
   template: `
     <div>
-      <h3>Airline Passengers</h3>
       <span class="status" [class.checked-in]="detail.checkedIn"> </span>
       <div *ngIf="editing">
         <input 
