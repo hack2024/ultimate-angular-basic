@@ -44,5 +44,8 @@ ngOnChanges lifecycle hook
 =======================
 ngOnChanges se activa antes que ngOnInit para inicializar el bindeo de los datos, para que esten disponibles
 antes que se inicialize el componente.
+En esta parte del video se demuestra tambien como un error, por que en el componente hijo, una propiedad declarada
+como input, la esta leyendo el padre y se esta actualizando, lo cual no deberia pasar. esto se soluciona implementando
+este hook para que solo haya one way data flow.
 
 - "One way data flow with local state changes"
