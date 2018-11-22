@@ -40,3 +40,9 @@ ngOnInit lifecycle hook
 Un hook basicamente es una funcion que llama angular cuando algo pasa
 ngOnInit se activa cuando el componente esta ready. en esta funcion por ejemplo, se deberia hacer
 un fecth de cosas.
+ngOnChanges lifecycle hook
+=======================
+ngOnChanges se activa antes que ngOnInit para inicializar el bindeo de los datos, para que esten disponibles
+antes que se inicialize el componente.
+
+- "One way data flow with local state changes"
