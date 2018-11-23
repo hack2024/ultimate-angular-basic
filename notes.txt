@@ -51,3 +51,7 @@ este hook para que solo haya one way data flow.
 - "One way data flow with local state changes"
 
 - Los datos van hacia abajo y los eventos hacia arriba
+
+Understanding @Injectable
+=========================
+Con @Injectable podemos injectar depencia en un servicio, generalmente por el componente Http

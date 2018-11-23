@@ -8,8 +8,8 @@ import { Passenger } from '../../models/passenger.interface'
     <div>
       <span class="status" [class.checked-in]="detail.checkedIn"> </span>
       <div *ngIf="editing">
-        <input 
-          type="text" 
+        <input
+          type="text"
           [value]="detail.fullname"
           (input)="onNameChange(name.value)"
           #name>
@@ -40,7 +40,7 @@ import { Passenger } from '../../models/passenger.interface'
     </div>
   `
 })
-export class PassengerDetailComponent implements OnChanges, OnInit{
+export class PassengerDetailComponent implements OnChanges{
 
   @Input()
   detail: Passenger
@@ -55,10 +55,6 @@ export class PassengerDetailComponent implements OnChanges, OnInit{
     if (changes.detail) {
       this.detail = Object.assign({}, changes.detail.currentValue);
     }
-  }
-  
-  ngOnInit(){
-    console.log('ngOnInit')
   }
 
   onNameChange(value: string){
