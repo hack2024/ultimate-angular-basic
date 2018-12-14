@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 // Container
 import { PassengerDashboardComponent } from './containers/passenger-dashboard/passenger-dashboard.component'
+import { PassengerViewerComponent } from './containers/passenger-viewer/passenger-viewer.component';
 
 // Components
 import { PassengerDetailComponent } from './components/passenger-detail/passenger-detail.component'
@@ -16,14 +17,15 @@ import { HttpModule } from '@angular/http';
   declarations: [
     PassengerDashboardComponent,
     PassengerCountComponent,
-    PassengerDetailComponent
+    PassengerDetailComponent,
+    PassengerViewerComponent
   ],
   imports: [
     CommonModule,
     HttpModule
   ],
   exports: [
-    PassengerDashboardComponent
+    PassengerViewerComponent
   ],
   providers: [
     PassengerDashboardService
