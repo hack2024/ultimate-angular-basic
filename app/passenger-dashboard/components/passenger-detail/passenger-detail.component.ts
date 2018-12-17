@@ -25,12 +25,6 @@ import { Passenger } from '../../models/passenger.interface'
             : "Not checked in..."
         }}
       </div>
-      <div class="children">
-        <!--
-          para evitar errores por valores null, usamos el safe operator "?"
-        -->
-        Children: {{ detail.children?.length || 0 }}
-      </div>
       <button (click)="toggleEdit()">
         {{ editing ? "Done" : "Edit"}}
       </button>
